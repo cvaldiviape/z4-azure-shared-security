@@ -35,9 +35,19 @@ Cualquier otra ruta exige un JWT válido. Si el servicio define su propio `Secur
 
 ## Instalar en local
 
+Las librerías se compilan con Java 21. Si tu terminal usa otra versión (revisa con `java -version`), cámbiala primero:
+
+```bash
+export JAVA_HOME=$(/usr/libexec/java_home -v 21)
+```
+
+Después instala:
+
 ```bash
 ./mvnw install
 ```
+
+Si te olvidas del `export`, Maven falla con `class file version 65.0 ... only recognizes class file versions up to 61.0`: 65 es Java 21 y 61 es Java 17.
 
 ## Usar en un servicio
 
